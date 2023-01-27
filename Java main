@@ -1,0 +1,88 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+    public static void main(String[] args) {
+        int userChoise, computerChoise, scissors, paper, stone;        ------>>>>>>> first create the object to start with.
+        Scanner sc = new Scanner(System.in);
+        Random rnd = new Random();
+
+        scissors = 0;
+        paper = 1;
+        stone = 2;
+        System.out.println("Welcome to the Game:");
+        System.out.println("Enter any number : (scissors = 1, paper = 2, stone = 3)");           ----------->>>>> What to aks 
+
+        userChoise = sc.nextInt();
+        while (userChoise>2){                                                        ------------>>>> to run the code again in case if the palyer enter more than 2 number
+            System.out.println("Sorry enter the number again"); 
+            userChoise = sc.nextInt();
+        }
+
+        computerChoise = rnd.nextInt(3);
+
+        if (userChoise == scissors){                                                ------------>>>> creating object for user
+            System.out.println("User chooses scissors");
+        } else if (userChoise == paper){
+            System.out.println("User chooses paper");
+        } else if ( userChoise == stone){
+            System.out.println("User chooses stone");
+        }
+
+        if (computerChoise == scissors){                                           -------------->>>> creating object for computer
+            System.out.println("Computer chooses scissors");
+        } else if ( computerChoise == paper){
+            System.out.println("Computer chooses paper");
+        } else if (computerChoise == stone){
+            System.out.println("Computer chooses stone");
+        }
+
+        if (userChoise == computerChoise){                                         ------------>>>> When there is draw
+            System.out.println("Its a draw");
+        }
+        while (userChoise == computerChoise){
+            System.out.println("Enter the value again:");
+            userChoise = sc.nextInt();
+        }
+        computerChoise = rnd.nextInt(3);
+        if (userChoise == scissors){
+            System.out.println("User chooses scissors");
+        } else if (userChoise == paper){
+            System.out.println("User chooses paper");
+        } else if ( userChoise == stone){
+            System.out.println("User chooses stone");
+        }
+
+        if (computerChoise == scissors){
+            System.out.println("Computer chooses scissors");
+        } else if ( computerChoise == paper){
+            System.out.println("Computer chooses paper");
+        } else if (computerChoise == stone){
+            System.out.println("Computer chooses stone");
+        }
+
+        if (userChoise == scissors){                                                  -------->>>>> selcting a winner
+            if (computerChoise == paper){
+                System.out.println("User wins");
+            } else {
+                System.out.println("Computer wins");
+            }
+        }
+        if (userChoise == paper){
+            if (computerChoise == stone){
+                System.out.println("User wins");
+            } else{
+                System.out.println("Computer wins");
+            }
+
+        }
+        if (userChoise == stone){
+            if (computerChoise == scissors){
+                System.out.println("Computer wins");
+            } else
+            {
+                System.out.println( "User wins");
+            }
+        }
+    }
+}
